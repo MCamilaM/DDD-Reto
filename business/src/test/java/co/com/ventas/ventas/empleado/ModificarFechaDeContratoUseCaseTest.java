@@ -4,11 +4,13 @@ import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.repository.DomainEventRepository;
 import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.domain.generic.DomainEvent;
-import co.com.ventas.ventas.empleado.commands.AgregarDescripcionDeRol;
-import co.com.ventas.ventas.empleado.events.DescripcionAgregadaDeRol;
+import co.com.ventas.ventas.empleado.commands.ModificarFechaDeContrato;
 import co.com.ventas.ventas.empleado.events.EmpleadoCreado;
-import co.com.ventas.ventas.empleado.events.RolAgregado;
-import co.com.ventas.ventas.empleado.values.*;
+import co.com.ventas.ventas.empleado.events.FechaModificadaDeContrato;
+import co.com.ventas.ventas.empleado.values.ContratoId;
+import co.com.ventas.ventas.empleado.values.Descripcion;
+import co.com.ventas.ventas.empleado.values.EmpleadoId;
+import co.com.ventas.ventas.empleado.values.Fecha;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -17,28 +19,31 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
 
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class AgregarDescripcionDeRolUseCaseTest {
+class ModificarFechaDeContratoUseCaseTest {
 
     @InjectMocks
-    private AgregarDescripcionDeRolUseCase useCase;
+    private ModificarFechaDeContratoUseCase useCase;
 
     @Mock
     private DomainEventRepository repository;
 
+    ModificarFechaDeContratoUseCaseTest() {
+    }
+
     @Test
-    public void agregarDescripcionDeRolHappyPass(){
-        //arrange
+    public void modificarFechaDeContratroHappyPass(){
         EmpleadoId empleadoId = EmpleadoId.of("emp5");
-        RolId rolId = RolId.of("rol3");
-        Descripcion descripcion = new Descripcion("Maneja el negocio A");
-        var command = new AgregarDescripcionDeRol(empleadoId,rolId,descripcion);
+        ContratoId contratoId = ContratoId.of("c5");
+        LocalTime hora = LocalTime.of(5,40,36,05);
+        LocalDate dia = LocalDate.of(2022,5,17);
+        Fecha fecha = new Fecha(hora,dia);
+        var command = new ModificarFechaDeContrato(empleadoId,contratoId,fecha);
 
         when(repository.getEventsBy("emp5")).thenReturn(history());
         useCase.addRepository(repository);
@@ -51,29 +56,26 @@ class AgregarDescripcionDeRolUseCaseTest {
                 .getDomainEvents();
 
         //asserts
-        var event = (DescripcionAgregadaDeRol)events.get(0);
-        Assertions.assertEquals("Maneja el negocio A", event.getDescripcion().value());
+        var event = (FechaModificadaDeContrato)events.get(0);
+        Assertions.assertEquals(fecha, event.getFecha());
+
 
     }
 
     private List<DomainEvent> history() {
-        ContratoId contratoId = new ContratoId("c4");
+        ContratoId contratoId = new ContratoId("c5");
         LocalTime hora = LocalTime.of(10,50,18,05);
         Fecha fecha = new Fecha(hora, LocalDate.now());
-        Descripcion descripcion = new Descripcion("Termino definido");
+        Descripcion descripcion = new Descripcion("por horas");
         Contrato contrato = new Contrato(contratoId, fecha, descripcion);
 
         var event = new EmpleadoCreado(
-                new Nombre("Carlos"),
+                new Nombre("Robert"),
                 contrato
         );
-
-        RolId rolId = RolId.of("rol3");
-        Nombre nombre = new Nombre("Admin");
-        var event2 = new RolAgregado(rolId,nombre);
-
         event.setAggregateRootId("emp5");
 
-        return List.of(event,event2);
+        return List.of(event);
     }
+
 }

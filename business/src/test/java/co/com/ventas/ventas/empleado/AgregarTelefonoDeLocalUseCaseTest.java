@@ -16,7 +16,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 
 import static org.mockito.Mockito.when;
@@ -48,7 +48,7 @@ class AgregarTelefonoDeLocalUseCaseTest {
                 .orElseThrow()
                 .getDomainEvents();
 
-        //assert
+        //asserts
         var event = (TelefonoAgregadoDeLocal)events.get(0);
         Assertions.assertEquals("0123456789", event.getTelefono().value());
 
@@ -56,7 +56,7 @@ class AgregarTelefonoDeLocalUseCaseTest {
 
     private List<DomainEvent> history() {
         ContratoId contratoId = new ContratoId("c3");
-        Fecha fecha = new Fecha(LocalDateTime.now(), LocalDate.now());
+        Fecha fecha = new Fecha(LocalTime.now(), LocalDate.now());
         Descripcion descripcion = new Descripcion("por horas");
         Contrato contrato = new Contrato(contratoId, fecha, descripcion);
 

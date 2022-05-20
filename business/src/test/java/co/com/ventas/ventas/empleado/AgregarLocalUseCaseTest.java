@@ -17,9 +17,10 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -55,7 +56,8 @@ class AgregarLocalUseCaseTest {
 
     private List<DomainEvent> history() {
         ContratoId contratoId = new ContratoId("c3");
-        Fecha fecha = new Fecha(LocalDateTime.now(), LocalDate.now());
+        LocalTime hora = LocalTime.of(10,50,18,05);
+        Fecha fecha = new Fecha(hora, LocalDate.now());
         Descripcion descripcion = new Descripcion("Termino definido");
         Contrato contrato = new Contrato(contratoId, fecha, descripcion);
 

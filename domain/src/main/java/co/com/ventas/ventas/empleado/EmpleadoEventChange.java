@@ -26,7 +26,7 @@ public class EmpleadoEventChange extends EventChange {
             empleado.rol.agregarDescripcion(event.getDescripcion());
         });
 
-        apply((FechaModificadaAContrato event) ->{
+        apply((FechaModificadaDeContrato event) ->{
             empleado.contrato.modificarFecha(event.getFecha());
         });
 

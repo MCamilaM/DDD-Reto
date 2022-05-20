@@ -46,8 +46,8 @@ public class Empleado extends AggregateEvent<EmpleadoId> {
         appendChange(new DescripcionAgregadaDeRol(rolId, descripcion));
     }
 
-    public void modificarFechaDeContrato(LocalId localId, Fecha fecha){
-        appendChange(new FechaModificadaAContrato(localId, fecha));
+    public void modificarFechaDeContrato(ContratoId contratoId, Fecha fecha){
+        appendChange(new FechaModificadaDeContrato(contratoId, fecha));
     }
 
     public void agregarTelefonoDeLocal(LocalId localId, Telefono telefono){

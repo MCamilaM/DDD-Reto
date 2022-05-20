@@ -14,6 +14,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -35,7 +36,8 @@ class CrearEmpleadoUseCaseTest {
         Nombre nombre = new Nombre("Ramón");
 
         ContratoId contratoId = new ContratoId("c1");
-        Fecha fecha = new Fecha(LocalDateTime.now(), LocalDate.now());
+        LocalTime hora = LocalTime.of(10,50,18,05);
+        Fecha fecha = new Fecha(hora, LocalDate.now());
         Descripcion descripcion = new Descripcion("Termino indefinido");
         Contrato contrato = new Contrato(contratoId, fecha, descripcion);
 
