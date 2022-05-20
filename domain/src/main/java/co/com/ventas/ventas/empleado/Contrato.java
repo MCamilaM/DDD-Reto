@@ -3,7 +3,7 @@ package co.com.ventas.ventas.empleado;
 import co.com.sofka.domain.generic.Entity;
 import co.com.ventas.ventas.empleado.values.ContratoId;
 import co.com.ventas.ventas.empleado.values.Descripcion;
-import co.com.ventas.ventas.empleado.values.Fecha;
+import generics.Fecha;
 
 import java.util.Objects;
 

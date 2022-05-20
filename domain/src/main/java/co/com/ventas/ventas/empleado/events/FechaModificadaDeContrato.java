@@ -2,8 +2,7 @@ package co.com.ventas.ventas.empleado.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
 import co.com.ventas.ventas.empleado.values.ContratoId;
-import co.com.ventas.ventas.empleado.values.Fecha;
-import co.com.ventas.ventas.empleado.values.LocalId;
+import generics.Fecha;
 
 public class FechaModificadaDeContrato extends DomainEvent {
     private final ContratoId contratoId;

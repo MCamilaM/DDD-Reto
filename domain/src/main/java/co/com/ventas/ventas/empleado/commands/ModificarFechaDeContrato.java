@@ -3,7 +3,7 @@ package co.com.ventas.ventas.empleado.commands;
 import co.com.sofka.domain.generic.Command;
 import co.com.ventas.ventas.empleado.values.ContratoId;
 import co.com.ventas.ventas.empleado.values.EmpleadoId;
-import co.com.ventas.ventas.empleado.values.Fecha;
+import generics.Fecha;
 
 public class ModificarFechaDeContrato extends Command {
     private final EmpleadoId empleadoId;

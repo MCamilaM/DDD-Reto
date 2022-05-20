@@ -9,6 +9,7 @@ import co.com.ventas.ventas.empleado.events.EmpleadoCreado;
 import co.com.ventas.ventas.empleado.events.LocalAgregado;
 import co.com.ventas.ventas.empleado.values.*;
 import generics.Direccion;
+import generics.Fecha;
 import generics.Nombre;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

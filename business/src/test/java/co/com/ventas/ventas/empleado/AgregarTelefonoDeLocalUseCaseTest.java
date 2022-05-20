@@ -8,6 +8,7 @@ import co.com.ventas.ventas.empleado.commands.AgregarTelefonoDeLocal;
 import co.com.ventas.ventas.empleado.events.EmpleadoCreado;
 import co.com.ventas.ventas.empleado.events.TelefonoAgregadoDeLocal;
 import co.com.ventas.ventas.empleado.values.*;
+import generics.Fecha;
 import generics.Nombre;
 import generics.Telefono;
 import org.junit.jupiter.api.Assertions;

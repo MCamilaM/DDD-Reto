@@ -1,9 +1,8 @@
-package co.com.ventas.ventas.empleado.values;
+package generics;
 
 import co.com.sofka.domain.generic.ValueObject;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Objects;
 

@@ -9,6 +9,7 @@ import co.com.ventas.ventas.empleado.events.DescripcionAgregadaDeRol;
 import co.com.ventas.ventas.empleado.events.EmpleadoCreado;
 import co.com.ventas.ventas.empleado.events.RolAgregado;
 import co.com.ventas.ventas.empleado.values.*;
+import generics.Fecha;
 import generics.Nombre;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
