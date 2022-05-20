@@ -19,5 +19,3 @@ Vdomain/src/main/java/co/com/ventas/ventas/empleado/events/DescripcionAgregadaAR
 Wdomain/src/main/java/co/com/ventas/ventas/empleado/events/FechaModificadaAContrato.java,9\c\9c59a4cbc854927aaf315b0bea0ad05568480e54
 …
 Udomain/src/main/java/co/com/ventas/ventas/empleado/events/TelefonoAgregadoALocal.java,9\e\9e47355c31271e496e24e9235d467f67f67ad8d1
-@
-business/pom.xml,d\4\d4ebdfff43bfaf86e620b416afb4835b5f67b594
