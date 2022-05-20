@@ -13,6 +13,15 @@ public class Telefono implements ValueObject<String> {
         if(this.value.isBlank()){
             throw new IllegalArgumentException("El telefono  no puede estar vacio");
         }
+        if(this.value.length() != 10){
+            throw new IllegalArgumentException("Número de telefono incorrecto. Debe contener 10 números");
+        }
+        try{
+            Integer telefono = Integer.parseInt(this.value);
+        } catch (Exception e) {
+            throw new IllegalArgumentException("Número de telefono incorrecto. Solo debe contener números");
+
+        }
     }
 
     @Override

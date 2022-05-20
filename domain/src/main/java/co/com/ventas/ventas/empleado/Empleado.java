@@ -51,7 +51,7 @@ public class Empleado extends AggregateEvent<EmpleadoId> {
     }
 
     public void agregarTelefonoDeLocal(LocalId localId, Telefono telefono){
-        appendChange(new TelefonoAgregadoALocal(localId, telefono));
+        appendChange(new TelefonoAgregadoDeLocal(localId, telefono));
     }
 
     /**

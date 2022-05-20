@@ -30,7 +30,7 @@ public class EmpleadoEventChange extends EventChange {
             empleado.contrato.modificarFecha(event.getFecha());
         });
 
-        apply((TelefonoAgregadoALocal event) ->{
+        apply((TelefonoAgregadoDeLocal event) ->{
             empleado.local.agregarTelefono(event.getTelefono());
         });
     }

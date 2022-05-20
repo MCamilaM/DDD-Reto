@@ -4,11 +4,11 @@ import co.com.sofka.domain.generic.DomainEvent;
 import co.com.ventas.ventas.empleado.values.LocalId;
 import co.com.ventas.ventas.empleado.values.Telefono;
 
-public class TelefonoAgregadoALocal extends DomainEvent {
+public class TelefonoAgregadoDeLocal extends DomainEvent {
     private final LocalId localId;
     private final Telefono telefono;
 
-    public TelefonoAgregadoALocal(LocalId localId, Telefono telefono) {
+    public TelefonoAgregadoDeLocal(LocalId localId, Telefono telefono) {
         super("co.com.ventas.ventas.TelefonoAgregadoALocal");
         this.localId = localId;
         this.telefono = telefono;
