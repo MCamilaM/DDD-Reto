@@ -3,8 +3,6 @@ y
 Idomain/src/main/java/co/com/ventas/ventas/empleado/values/ContratoId.java,1\a\1aa2f536a286783c53c98cb09755c2cf8100175e
 z
 Jdomain/src/main/java/co/com/ventas/ventas/empleado/values/Descripcion.java,0\1\01ae6ab3aff06b7007f88532860eea5f84990dc3
-x
-Hdomain/src/main/java/co/com/ventas/ventas/empleado/values/Direccion.java,b\6\b6f5814269e4fa5b824b073aa00a73b5ff08b147
 v
 Fdomain/src/main/java/co/com/ventas/ventas/empleado/values/LocalId.java,5\5\55363cc2b008de3dc6a10579f49138a215e5556a
 >
@@ -13,9 +11,3 @@ Fdomain/src/main/java/co/com/ventas/ventas/empleado/values/LocalId.java,5\5\553
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 t
 Ddomain/src/main/java/co/com/ventas/ventas/empleado/values/RolId.java,a\3\a36c7e00538de0a30f63ce0143bed22234b661df
-†
-Vdomain/src/main/java/co/com/ventas/ventas/empleado/events/DescripcionAgregadaARol.java,d\1\d139d756d910a2f058114b52ef6afc0b3134d6db
-‡
-Wdomain/src/main/java/co/com/ventas/ventas/empleado/events/FechaModificadaAContrato.java,9\c\9c59a4cbc854927aaf315b0bea0ad05568480e54
-…
-Udomain/src/main/java/co/com/ventas/ventas/empleado/events/TelefonoAgregadoALocal.java,9\e\9e47355c31271e496e24e9235d467f67f67ad8d1
