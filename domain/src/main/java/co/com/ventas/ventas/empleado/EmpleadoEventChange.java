@@ -22,7 +22,7 @@ public class EmpleadoEventChange extends EventChange {
 
         });
 
-        apply((DescripcionAgregadaARol event) ->{
+        apply((DescripcionAgregadaDeRol event) ->{
             empleado.rol.agregarDescripcion(event.getDescripcion());
         });
 

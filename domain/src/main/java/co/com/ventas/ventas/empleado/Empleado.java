@@ -43,7 +43,7 @@ public class Empleado extends AggregateEvent<EmpleadoId> {
     }
 
     public void agregarDescripcionDeRol(RolId rolId, Descripcion descripcion){
-        appendChange(new DescripcionAgregadaARol(rolId, descripcion));
+        appendChange(new DescripcionAgregadaDeRol(rolId, descripcion));
     }
 
     public void modificarFechaDeContrato(LocalId localId, Fecha fecha){

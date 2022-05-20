@@ -11,8 +11,6 @@ y
 Idomain/src/main/java/co/com/ventas/ventas/empleado/values/EmpleadoId.java,b\5\b58d341f4ebd260e5382d94c85ee5d8807e33b91
 t
 Ddomain/src/main/java/co/com/ventas/ventas/empleado/values/Fecha.java,3\4\34aa412474bfe4edd1bbdf7c4658812e6c76f975
-m
-=domain/src/main/java/co/com/ventas/ventas/empleado/Local.java,3\a\3ab270af4e81df23498e96e31d3edb7a1ad071b7
 v
 Fdomain/src/main/java/co/com/ventas/ventas/empleado/values/LocalId.java,5\5\55363cc2b008de3dc6a10579f49138a215e5556a
 n
@@ -21,12 +19,8 @@ n
 domain/pom.xml,8\b\8b11330a6810846535e4b5ba2024ccfcee112862
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-k
-;domain/src/main/java/co/com/ventas/ventas/empleado/Rol.java,c\e\cefd3f1df62a596debfc9d86351fcdcec397f65c
 t
 Ddomain/src/main/java/co/com/ventas/ventas/empleado/values/RolId.java,a\3\a36c7e00538de0a30f63ce0143bed22234b661df
-}
-Mdomain/src/main/java/co/com/ventas/ventas/empleado/commands/AgregarLocal.java,d\c\dc4fddaddd892747f9eb3c98181f9f6112a355d3
 ~
 Ndomain/src/main/java/co/com/ventas/ventas/empleado/commands/CrearEmpleado.java,f\4\f4d7ba94b4fdc0b136ca99d82c35c168235a94b5
 Ü
@@ -43,8 +37,6 @@ z
 Jdomain/src/main/java/co/com/ventas/ventas/empleado/events/RolAgregado.java,f\2\f2b806e6709b2fd90b3766c8a946c1876012c747
 Ö
 Udomain/src/main/java/co/com/ventas/ventas/empleado/events/TelefonoAgregadoALocal.java,9\e\9e47355c31271e496e24e9235d467f67f67ad8d1
-Å
-Qbusiness/src/test/java/co/com/ventas/ventas/empleado/AgregarLocalUseCaseTest.java,5\7\5794d90b832ff05a9d12b1cecad80e71a340b79c
 {
 Kbusiness/src/main/java/co/com/ventas/ventas/empleado/AgregarRolUseCase.java,6\0\60e72c347cc636a85e12daf928eab6fbb42b712e
 ~
