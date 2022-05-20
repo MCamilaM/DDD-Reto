@@ -4,28 +4,33 @@ import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 import co.com.ventas.ventas.empleado.values.EmpleadoId;
 import co.com.ventas.ventas.formula.values.FormulaId;
-import co.com.ventas.ventas.venta.values.MedicamentoId;
-import co.com.ventas.ventas.venta.values.VentaId;
+import co.com.ventas.ventas.venta.events.*;
+import co.com.ventas.ventas.venta.values.*;
+import generics.Nombre;
 
 import java.util.List;
 import java.util.Map;
 
 public class Venta extends AggregateEvent<VentaId> {
 
-    protected Map<MedicamentoId, Medicamento> medicamentos;
     protected EmpleadoId empleadoId;
     protected FormulaId formulaId;
+    protected Cliente cliente;
+    protected Factura factura;
+    protected Map<MedicamentoId, Medicamento> medicamentos;
 
     public Venta(VentaId ventaId,
-                 Map<MedicamentoId, Medicamento> medicamentos,
                  EmpleadoId empleadoId,
-                 FormulaId formulaId)
+                 FormulaId formulaId,
+                 Cliente cliente,
+                 Factura factura)
     {
         super(ventaId);
-        this.medicamentos = medicamentos;
         this.empleadoId = empleadoId;
         this.formulaId = formulaId;
-        appendChange(new VentaCreada(medicamentos, empleadoId, formulaId)).apply();
+        this.cliente = cliente;
+        this.factura = factura;
+        appendChange(new VentaCreada(empleadoId, formulaId, cliente, factura)).apply();
         subscribe(new VentaEventChange(this));
     }
 
@@ -38,5 +43,26 @@ public class Venta extends AggregateEvent<VentaId> {
         var venta = new Venta(ventaId);
         events.forEach(venta::applyEvent);
         return venta;
+    }
+
+    public void agregarMedicamento(MedicamentoId medicamentoId,
+                                   Nombre nombre,
+                                   Laboratorio laboratorio,
+                                   EfectoFarmacologico efectoFarmacologico,
+                                   Composicion composicion,
+                                   Precio precio,
+                                   Cantidad cantidad){
+        appendChange(new MedicamentoCreado(medicamentoId, nombre, laboratorio, efectoFarmacologico, composicion, precio, cantidad));
+    }
+    public void agregarComposicionDeMedicamento(MedicamentoId medicamentoId, Composicion composicion){
+        appendChange(new ComposicionAgregadaAMedicamento(medicamentoId, composicion));
+    }
+
+    public void actualizarTotalDeFactura(FacturaId facturaId, Total total){
+        appendChange(new TotalDeFacturaActualizado(facturaId, total));
+    }
+
+    public void actualizarCorreoElectronicoDeCliente(ClienteId clienteId, CorreoElectronico correoElectronico){
+        appendChange(new CorreoElectronicoDeClienteActualizado(clienteId,correoElectronico));
     }
 }

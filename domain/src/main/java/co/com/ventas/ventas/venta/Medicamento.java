@@ -19,7 +19,6 @@ public class Medicamento extends Entity<MedicamentoId> {
                        Nombre nombre,
                        Laboratorio laboratorio,
                        EfectoFarmacologico efectoFarmacologico,
-                       Composicion composicion,
                        Precio precio,
                        Cantidad cantidad)
     {
@@ -27,11 +26,10 @@ public class Medicamento extends Entity<MedicamentoId> {
         this.nombre = nombre;
         this.laboratorio = laboratorio;
         this.efectoFarmacologico = efectoFarmacologico;
-        this.composicion = composicion;
         this.precio = precio;
         this.cantidad = cantidad;
     }
-    public void actualizarComposicion(Composicion composicion){
+    public void agregarComposicion(Composicion composicion){
         this.composicion = Objects.requireNonNull(composicion);
     }
 }
