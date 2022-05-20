@@ -26,7 +26,7 @@ class CrearEmpleadoUseCaseTest {
     }
 
     @Test
-    public void crearCursoHappyPass(){
+    public void crearEmpleadoHappyPass(){
         //arrange
 
         EmpleadoId empleadoId = EmpleadoId.of("emp1");
