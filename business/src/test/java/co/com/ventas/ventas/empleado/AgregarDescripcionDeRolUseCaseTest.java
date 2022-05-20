@@ -9,6 +9,7 @@ import co.com.ventas.ventas.empleado.events.DescripcionAgregadaDeRol;
 import co.com.ventas.ventas.empleado.events.EmpleadoCreado;
 import co.com.ventas.ventas.empleado.events.RolAgregado;
 import co.com.ventas.ventas.empleado.values.*;
+import generics.Nombre;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -17,7 +18,6 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
 
@@ -53,6 +53,8 @@ class AgregarDescripcionDeRolUseCaseTest {
         //asserts
         var event = (DescripcionAgregadaDeRol)events.get(0);
         Assertions.assertEquals("Maneja el negocio A", event.getDescripcion().value());
+        /*Assertions.assertEquals("emp5",event.aggregateRootId());
+        Assertions.assertEquals("rol3",event.getRolId().value());*/
 
     }
 

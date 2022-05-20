@@ -1,4 +1,4 @@
-package co.com.ventas.ventas.empleado.values;
+package generics;
 
 import co.com.sofka.domain.generic.ValueObject;
 

@@ -1,7 +1,7 @@
 package co.com.ventas.ventas.empleado.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import co.com.ventas.ventas.empleado.Nombre;
+import generics.Nombre;
 import co.com.ventas.ventas.empleado.values.RolId;
 
 public class RolAgregado extends DomainEvent {

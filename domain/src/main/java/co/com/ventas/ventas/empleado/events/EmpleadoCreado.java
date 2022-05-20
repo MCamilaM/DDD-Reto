@@ -2,7 +2,7 @@ package co.com.ventas.ventas.empleado.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
 import co.com.ventas.ventas.empleado.Contrato;
-import co.com.ventas.ventas.empleado.Nombre;
+import generics.Nombre;
 
 
 public class EmpleadoCreado extends DomainEvent {

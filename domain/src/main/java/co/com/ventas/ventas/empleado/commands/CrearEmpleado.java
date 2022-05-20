@@ -2,7 +2,7 @@ package co.com.ventas.ventas.empleado.commands;
 
 import co.com.sofka.domain.generic.Command;
 import co.com.ventas.ventas.empleado.Contrato;
-import co.com.ventas.ventas.empleado.Nombre;
+import generics.Nombre;
 import co.com.ventas.ventas.empleado.values.EmpleadoId;
 
 public class CrearEmpleado extends Command {

@@ -1,17 +1,18 @@
-package co.com.ventas.ventas.empleado.values;
+package co.com.ventas.ventas.formula.values;
 
+import co.com.sofka.domain.generic.Entity;
 import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class Direccion implements ValueObject<String> {
+public class Especialidad implements ValueObject<String> {
 
     private final String value;
 
-    public Direccion(String value) {
+    public Especialidad(String value) {
         this.value = Objects.requireNonNull(value);
         if(this.value.isBlank()){
-            throw new IllegalArgumentException("La direccion no puede estar en blanco.");
+            throw new IllegalArgumentException("La especialidad no puede estar en blanco.");
         }
     }
 

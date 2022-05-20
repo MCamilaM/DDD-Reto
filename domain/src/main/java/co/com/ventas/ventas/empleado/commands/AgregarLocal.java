@@ -1,7 +1,7 @@
 package co.com.ventas.ventas.empleado.commands;
 
 import co.com.sofka.domain.generic.Command;
-import co.com.ventas.ventas.empleado.values.Direccion;
+import generics.Direccion;
 import co.com.ventas.ventas.empleado.values.EmpleadoId;
 
 public class AgregarLocal extends Command {

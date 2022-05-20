@@ -8,15 +8,13 @@ import co.com.ventas.ventas.empleado.values.ContratoId;
 import co.com.ventas.ventas.empleado.values.Descripcion;
 import co.com.ventas.ventas.empleado.values.EmpleadoId;
 import co.com.ventas.ventas.empleado.values.Fecha;
+import generics.Nombre;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class CrearEmpleadoUseCaseTest {
 

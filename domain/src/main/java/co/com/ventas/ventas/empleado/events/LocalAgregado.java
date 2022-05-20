@@ -1,7 +1,7 @@
 package co.com.ventas.ventas.empleado.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import co.com.ventas.ventas.empleado.values.Direccion;
+import generics.Direccion;
 import co.com.ventas.ventas.empleado.values.LocalId;
 
 public class LocalAgregado extends DomainEvent {

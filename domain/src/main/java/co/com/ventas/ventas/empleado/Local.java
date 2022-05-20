@@ -1,9 +1,9 @@
 package co.com.ventas.ventas.empleado;
 
 import co.com.sofka.domain.generic.Entity;
-import co.com.ventas.ventas.empleado.values.Direccion;
+import generics.Direccion;
 import co.com.ventas.ventas.empleado.values.LocalId;
-import co.com.ventas.ventas.empleado.values.Telefono;
+import generics.Telefono;
 
 import java.util.Objects;
 

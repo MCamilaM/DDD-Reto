@@ -3,7 +3,7 @@ package co.com.ventas.ventas.empleado.commands;
 import co.com.sofka.domain.generic.Command;
 import co.com.ventas.ventas.empleado.values.EmpleadoId;
 import co.com.ventas.ventas.empleado.values.LocalId;
-import co.com.ventas.ventas.empleado.values.Telefono;
+import generics.Telefono;
 
 public class AgregarTelefonoDeLocal extends Command {
     private final EmpleadoId empleadoId;

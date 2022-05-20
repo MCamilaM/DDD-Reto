@@ -4,6 +4,9 @@ import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 import co.com.ventas.ventas.empleado.events.*;
 import co.com.ventas.ventas.empleado.values.*;
+import generics.Direccion;
+import generics.Nombre;
+import generics.Telefono;
 
 import java.util.List;
 
