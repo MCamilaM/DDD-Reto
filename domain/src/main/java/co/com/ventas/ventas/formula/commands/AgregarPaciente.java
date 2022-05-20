@@ -4,12 +4,14 @@ import co.com.sofka.domain.generic.Command;
 import co.com.ventas.ventas.formula.values.Diagnostico;
 import co.com.ventas.ventas.formula.values.Edad;
 import co.com.ventas.ventas.formula.values.FormulaId;
+import co.com.ventas.ventas.formula.values.PacienteId;
 import generics.Direccion;
 import generics.Nombre;
 import generics.Telefono;
 
 public class AgregarPaciente extends Command {
     private final FormulaId formulaId;
+    private final PacienteId pacienteId;
     private final Nombre nombre;
     private final Edad edad;
     private final Direccion direccion;
@@ -17,12 +19,14 @@ public class AgregarPaciente extends Command {
     private final Diagnostico diagnostico;
 
     public AgregarPaciente(FormulaId formulaId,
+                           PacienteId pacienteId,
                            Nombre nombre,
                            Edad edad,
                            Direccion direccion,
                            Telefono telefono,
                            Diagnostico diagnostico) {
         this.formulaId = formulaId;
+        this.pacienteId = pacienteId;
         this.nombre = nombre;
         this.edad = edad;
         this.direccion = direccion;
@@ -32,6 +36,10 @@ public class AgregarPaciente extends Command {
 
     public FormulaId getFormulaId() {
         return formulaId;
+    }
+
+    public PacienteId getPacienteId() {
+        return pacienteId;
     }
 
     public Nombre getNombre() {
