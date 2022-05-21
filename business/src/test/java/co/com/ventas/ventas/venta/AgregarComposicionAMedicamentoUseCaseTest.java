@@ -6,8 +6,8 @@ import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.domain.generic.DomainEvent;
 import co.com.ventas.ventas.empleado.values.EmpleadoId;
 import co.com.ventas.ventas.formula.values.FormulaId;
-import co.com.ventas.ventas.venta.commands.AgregarMedicamento;
-import co.com.ventas.ventas.venta.events.MedicamentoCreado;
+import co.com.ventas.ventas.venta.commands.AgregarComposicionAMedicamento;
+import co.com.ventas.ventas.venta.events.ComposicionAgregadaAMedicamento;
 import co.com.ventas.ventas.venta.events.VentaCreada;
 import co.com.ventas.ventas.venta.values.*;
 import generics.Fecha;
@@ -24,55 +24,39 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class AgregarMedicamentoUseCaseTest {
+class AgregarComposicionAMedicamentoUseCaseTest {
 
     @InjectMocks
-    private AgregarMedicamentoUseCase useCase;
+    private AgregarComposicionAMedicamentoUseCase useCase;
 
     @Mock
     private DomainEventRepository repository;
 
     @Test
-    public void agregarMedicamentoHappyPass(){
+    public void agregarComposicionHappyPass(){
         //arrange
-        VentaId ventaId = VentaId.of("venta2");
+        VentaId ventaId = VentaId.of("venta1");
         MedicamentoId medicamentoId = MedicamentoId.of("med1");
-        Nombre nombre = new Nombre("Azitromicina");
-        Laboratorio laboratorio = new Laboratorio("Genfar");
-        EfectoFarmacologico efectoFarmacologico = new EfectoFarmacologico("aaaa");
-        Precio precio = new Precio(5350D);
-        Cantidad cantidad = new Cantidad(5);
+        Composicion composicion = new Composicion("ttttt");
 
-        var command = new AgregarMedicamento(ventaId,
-                            medicamentoId,
-                            nombre,
-                            laboratorio,
-                            efectoFarmacologico,
-                            precio,
-                            cantidad);
+        var command = new AgregarComposicionAMedicamento(ventaId,medicamentoId,composicion);
 
-        when(repository.getEventsBy("venta2")).thenReturn(history());
+        when(repository.getEventsBy("venta1")).thenReturn(history());
         useCase.addRepository(repository);
-
         //act
         var events = UseCaseHandler.getInstance()
-                .setIdentifyExecutor(command.getVentaId().value())
                 .syncExecutor(useCase, new RequestCommand<>(command))
                 .orElseThrow()
                 .getDomainEvents();
-
-        //assert
-        var event = (MedicamentoCreado)events.get(0);
-        Assertions.assertEquals("venta2", event.aggregateRootId());
-        Assertions.assertEquals("Azitromicina", event.getNombre().value());
-        Assertions.assertEquals("Genfar", event.getLaboratorio().value());
-        Assertions.assertEquals("aaaa", event.getEfectoFarmacologico().value());
-        Assertions.assertEquals(5350D, event.getPrecio().value());
-        Assertions.assertEquals(5, event.getCantidad().value());
-
+        //asserts
+        var event = (ComposicionAgregadaAMedicamento) events.get(0);
+        Assertions.assertEquals("venta1", event.aggregateRootId());
+        Assertions.assertEquals("med1", event.getMedicamentoId().value());
+        Assertions.assertEquals("ttttt", event.getComposicion().value());
 
     }
 
@@ -99,5 +83,6 @@ class AgregarMedicamentoUseCaseTest {
         return List.of(event);
 
     }
+
 
 }
