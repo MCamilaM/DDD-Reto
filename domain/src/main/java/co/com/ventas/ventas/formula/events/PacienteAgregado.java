@@ -8,6 +8,13 @@ import generics.Direccion;
 import generics.Nombre;
 import generics.Telefono;
 
+/**
+ * evento Paciente Agregado
+ *
+ * @author Camila Morales
+ * @version 1.0.0
+ * @since 1.0.0
+ */
 public class PacienteAgregado extends DomainEvent {
     private final PacienteId pacienteId;
     private final Nombre nombre;
@@ -16,6 +23,15 @@ public class PacienteAgregado extends DomainEvent {
     private final Telefono telefono;
     private final Diagnostico diagnostico;
 
+    /**
+     * Constructor
+     * @param pacienteId
+     * @param nombre
+     * @param edad
+     * @param direccion
+     * @param telefono
+     * @param diagnostico
+     */
     public PacienteAgregado(PacienteId pacienteId,
                             Nombre nombre,
                             Edad edad,
@@ -31,6 +47,10 @@ public class PacienteAgregado extends DomainEvent {
         this.diagnostico = diagnostico;
     }
 
+
+    /**
+     * Getters
+     */
     public PacienteId getPacienteId() {
         return pacienteId;
     }

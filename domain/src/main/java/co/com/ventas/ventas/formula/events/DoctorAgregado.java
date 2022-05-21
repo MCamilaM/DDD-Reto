@@ -6,12 +6,26 @@ import co.com.ventas.ventas.formula.values.Especialidad;
 import generics.Nombre;
 import generics.Telefono;
 
+/**
+ * evento Doctor Agregado
+ *
+ * @author Camila Morales
+ * @version 1.0.0
+ * @since 1.0.0
+ */
 public class DoctorAgregado extends DomainEvent {
     private final DoctorId doctorId;
     private final Nombre nombre;
     private final Especialidad especialidad;
     private final Telefono telefono;
 
+    /**
+     * Constructor
+     * @param doctorId
+     * @param nombre
+     * @param especialidad
+     * @param telefono
+     */
     public DoctorAgregado(DoctorId doctorId,
                           Nombre nombre,
                           Especialidad especialidad,
@@ -23,6 +37,10 @@ public class DoctorAgregado extends DomainEvent {
         this.telefono = telefono;
     }
 
+
+    /**
+     * Getters
+     */
     public DoctorId getDoctorId() {
         return doctorId;
     }

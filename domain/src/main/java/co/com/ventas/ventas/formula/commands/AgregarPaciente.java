@@ -9,6 +9,13 @@ import generics.Direccion;
 import generics.Nombre;
 import generics.Telefono;
 
+/**
+ * comando Agregar paciente
+ *
+ * @author Camila Morales
+ * @version 1.0.0
+ * @since 1.0.0
+ */
 public class AgregarPaciente extends Command {
     private final FormulaId formulaId;
     private final PacienteId pacienteId;
@@ -18,6 +25,16 @@ public class AgregarPaciente extends Command {
     private final Telefono telefono;
     private final Diagnostico diagnostico;
 
+    /**
+     * Constructor
+     * @param formulaId
+     * @param pacienteId
+     * @param nombre
+     * @param edad
+     * @param direccion
+     * @param telefono
+     * @param diagnostico
+     */
     public AgregarPaciente(FormulaId formulaId,
                            PacienteId pacienteId,
                            Nombre nombre,
@@ -34,6 +51,9 @@ public class AgregarPaciente extends Command {
         this.diagnostico = diagnostico;
     }
 
+    /**
+     * Getters
+     */
     public FormulaId getFormulaId() {
         return formulaId;
     }
