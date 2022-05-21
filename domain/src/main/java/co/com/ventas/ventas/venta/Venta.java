@@ -49,10 +49,9 @@ public class Venta extends AggregateEvent<VentaId> {
                                    Nombre nombre,
                                    Laboratorio laboratorio,
                                    EfectoFarmacologico efectoFarmacologico,
-                                   Composicion composicion,
                                    Precio precio,
                                    Cantidad cantidad){
-        appendChange(new MedicamentoCreado(medicamentoId, nombre, laboratorio, efectoFarmacologico, composicion, precio, cantidad));
+        appendChange(new MedicamentoCreado(medicamentoId, nombre, laboratorio, efectoFarmacologico, precio, cantidad));
     }
     public void agregarComposicionDeMedicamento(MedicamentoId medicamentoId, Composicion composicion){
         appendChange(new ComposicionAgregadaAMedicamento(medicamentoId, composicion));
