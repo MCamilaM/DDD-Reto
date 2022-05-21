@@ -26,10 +26,6 @@ public class Venta extends AggregateEvent<VentaId> {
                  Factura factura)
     {
         super(ventaId);
-        this.empleadoId = empleadoId;
-        this.formulaId = formulaId;
-        this.cliente = cliente;
-        this.factura = factura;
         appendChange(new VentaCreada(empleadoId, formulaId, cliente, factura)).apply();
         subscribe(new VentaEventChange(this));
     }
@@ -57,11 +53,15 @@ public class Venta extends AggregateEvent<VentaId> {
         appendChange(new ComposicionAgregadaAMedicamento(medicamentoId, composicion));
     }
 
-    public void actualizarTotalDeFactura(FacturaId facturaId, Total total){
-        appendChange(new TotalDeFacturaActualizado(facturaId, total));
+    public void actualizarTotalDeFactura(VentaId ventaId, FacturaId facturaId, Total total){
+        appendChange(new TotalDeFacturaActualizado(ventaId, facturaId, total));
     }
 
     public void actualizarCorreoElectronicoDeCliente(ClienteId clienteId, CorreoElectronico correoElectronico){
         appendChange(new CorreoElectronicoDeClienteActualizado(clienteId,correoElectronico));
+    }
+
+    public void actualizarTotalDeFacturaPagado(VentaId ventaId, FacturaId facturaId, Total total){
+        appendChange(new TotalDeFacturaActualizado(ventaId, facturaId, total));
     }
 }

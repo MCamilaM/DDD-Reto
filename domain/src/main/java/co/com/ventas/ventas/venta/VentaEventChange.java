@@ -30,7 +30,7 @@ public class VentaEventChange extends EventChange {
         });
 
         apply((TotalDeFacturaActualizado event) ->{
-            venta.actualizarTotalDeFactura(event.getFacturaId(),event.getTotal());
+            venta.actualizarTotalDeFactura(event.getVentaId(), event.getFacturaId(),event.getTotal());
         });
 
         apply((CorreoElectronicoDeClienteActualizado event) ->{

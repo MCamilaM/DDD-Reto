@@ -12,7 +12,7 @@ public class ActualizarTotalAFacturaUseCase extends UseCase<RequestCommand<Actua
 
         var venta = Venta.from(command.getVentaId(),repository().getEventsBy(command.getVentaId().value()));
 
-        venta.actualizarTotalDeFactura(command.getFacturaId(), command.getTotal());
+        venta.actualizarTotalDeFactura(command.getVentaId(),command.getFacturaId(), command.getTotal());
 
         emit().onResponse(new ResponseEvents(venta.getUncommittedChanges()));
     }
