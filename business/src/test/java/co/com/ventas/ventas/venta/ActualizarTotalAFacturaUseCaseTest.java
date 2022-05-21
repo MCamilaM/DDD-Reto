@@ -6,8 +6,8 @@ import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.domain.generic.DomainEvent;
 import co.com.ventas.ventas.empleado.values.EmpleadoId;
 import co.com.ventas.ventas.formula.values.FormulaId;
-import co.com.ventas.ventas.venta.commands.AgregarComposicionAMedicamento;
-import co.com.ventas.ventas.venta.events.ComposicionAgregadaAMedicamento;
+import co.com.ventas.ventas.venta.commands.ActualizarTotalAFactura;
+import co.com.ventas.ventas.venta.events.TotalDeFacturaActualizado;
 import co.com.ventas.ventas.venta.events.VentaCreada;
 import co.com.ventas.ventas.venta.values.*;
 import generics.Fecha;
@@ -27,35 +27,38 @@ import java.util.List;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class AgregarComposicionAMedicamentoUseCaseTest {
+class ActualizarTotalAFacturaUseCaseTest {
 
     @InjectMocks
-    private AgregarComposicionAMedicamentoUseCase useCase;
+    private ActualizarTotalAFacturaUseCase useCase;
 
     @Mock
     private DomainEventRepository repository;
 
     @Test
-    public void agregarComposicionHappyPass(){
+    public void actualizarTotalAFacturaHappyPass(){
         //arrange
         VentaId ventaId = VentaId.of("venta1");
-        MedicamentoId medicamentoId = MedicamentoId.of("med1");
-        Composicion composicion = new Composicion("ttttt");
+        FacturaId facturaId = FacturaId.of("fac1");
+        Total total = new Total(4370D);
 
-        var command = new AgregarComposicionAMedicamento(ventaId,medicamentoId,composicion);
+        var command = new ActualizarTotalAFactura(ventaId,facturaId,total);
 
         when(repository.getEventsBy("venta1")).thenReturn(history());
         useCase.addRepository(repository);
+
         //act
         var events = UseCaseHandler.getInstance()
+                .setIdentifyExecutor(command.getVentaId().value())
                 .syncExecutor(useCase, new RequestCommand<>(command))
                 .orElseThrow()
                 .getDomainEvents();
         //asserts
-        var event = (ComposicionAgregadaAMedicamento) events.get(0);
+        var event = (TotalDeFacturaActualizado)events.get(0);
         Assertions.assertEquals("venta1", event.aggregateRootId());
-        Assertions.assertEquals("med1", event.getMedicamentoId().value());
-        Assertions.assertEquals("ttttt", event.getComposicion().value());
+        Assertions.assertEquals("fac1", event.getFacturaId().value());
+        Assertions.assertEquals(4370D, event.getTotal().value());
+
 
     }
 
@@ -82,6 +85,5 @@ class AgregarComposicionAMedicamentoUseCaseTest {
         return List.of(event);
 
     }
-
 
 }
