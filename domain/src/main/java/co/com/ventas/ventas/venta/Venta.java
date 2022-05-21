@@ -61,7 +61,7 @@ public class Venta extends AggregateEvent<VentaId> {
         appendChange(new CorreoElectronicoDeClienteActualizado(clienteId,correoElectronico));
     }
 
-    public void actualizarTotalDeFacturaPagado(VentaId ventaId, FacturaId facturaId, Total total){
-        appendChange(new TotalDeFacturaActualizado(ventaId, facturaId, total));
+    public void actualizarVenta(VentaId ventaId){
+        appendChange(new VentaActualizada(ventaId));
     }
 }
