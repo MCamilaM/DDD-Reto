@@ -8,12 +8,26 @@ import generics.Telefono;
 
 import java.util.Objects;
 
+/**
+ * Entidad Cliente
+ *
+ * @author Camila Morales
+ * @version 1.0.0
+ * @since 1.0.0
+ */
 public class Cliente extends Entity<ClienteId> {
 
     protected Nombre nombre;
     protected Telefono telefono;
     protected CorreoElectronico correoElectronico;
 
+    /**
+     * Constructor
+     * @param clienteId
+     * @param nombre
+     * @param telefono
+     * @param correoElectronico
+     */
     public Cliente(ClienteId clienteId, Nombre nombre, Telefono telefono, CorreoElectronico correoElectronico) {
         super(clienteId);
         this.nombre = nombre;
@@ -21,6 +35,10 @@ public class Cliente extends Entity<ClienteId> {
         this.correoElectronico = correoElectronico;
     }
 
+    /**
+     * Metodo para actualizar correo electronico de un cliente
+     * @param correoElectronico
+     */
     public void actualizarCorreoElectronico(CorreoElectronico correoElectronico){
         this.correoElectronico = Objects.requireNonNull(correoElectronico);
     }

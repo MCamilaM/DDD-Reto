@@ -4,6 +4,13 @@ import co.com.sofka.domain.generic.DomainEvent;
 import co.com.ventas.ventas.venta.values.*;
 import generics.Nombre;
 
+/**
+ * evento medicamento creado
+ *
+ * @author Camila Morales
+ * @version 1.0.0
+ * @since 1.0.0
+ */
 public class MedicamentoCreado extends DomainEvent {
 
     private final MedicamentoId medicamentoId;
@@ -13,6 +20,15 @@ public class MedicamentoCreado extends DomainEvent {
     private final Precio precio;
     private final Cantidad cantidad;
 
+    /**
+     * Constructor
+     * @param medicamentoId
+     * @param nombre
+     * @param laboratorio
+     * @param efectoFarmacologico
+     * @param precio
+     * @param cantidad
+     */
     public MedicamentoCreado(MedicamentoId medicamentoId,
                              Nombre nombre,
                              Laboratorio laboratorio,
@@ -28,6 +44,9 @@ public class MedicamentoCreado extends DomainEvent {
         this.cantidad = cantidad;
     }
 
+    /**
+     * Getters
+     */
     public MedicamentoId getMedicamentoId() {
         return medicamentoId;
     }

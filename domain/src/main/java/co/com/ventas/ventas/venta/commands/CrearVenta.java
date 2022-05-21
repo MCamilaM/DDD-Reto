@@ -6,7 +6,13 @@ import co.com.ventas.ventas.formula.values.FormulaId;
 import co.com.ventas.ventas.venta.Cliente;
 import co.com.ventas.ventas.venta.Factura;
 import co.com.ventas.ventas.venta.values.VentaId;
-
+/**
+ * Comando Crear Venta
+ *
+ * @author Camila Morales
+ * @version 1.0.0
+ * @since 1.0.0
+ */
 public class CrearVenta extends Command {
 
     private final VentaId ventaId;
@@ -15,6 +21,14 @@ public class CrearVenta extends Command {
     private final Cliente cliente;
     private final Factura factura;
 
+    /**
+     * Constructor
+     * @param ventaId
+     * @param empleadoId
+     * @param formulaId
+     * @param cliente
+     * @param factura
+     */
     public CrearVenta(VentaId ventaId,
                       EmpleadoId empleadoId,
                       FormulaId formulaId,
@@ -27,6 +41,9 @@ public class CrearVenta extends Command {
         this.factura = factura;
     }
 
+    /**
+     * Getters
+     */
     public VentaId getVentaId() {
         return ventaId;
     }

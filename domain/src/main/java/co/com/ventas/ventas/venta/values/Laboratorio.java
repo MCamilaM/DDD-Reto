@@ -4,6 +4,13 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
+/**
+ * objeto de valor laboratorio
+ *
+ * @author Camila Morales
+ * @version 1.0.0
+ * @since 1.0.0
+ */
 public class Laboratorio implements ValueObject<String> {
 
     private final String value;

@@ -4,12 +4,24 @@ import co.com.sofka.domain.generic.DomainEvent;
 import co.com.ventas.ventas.venta.values.FacturaId;
 import co.com.ventas.ventas.venta.values.Total;
 import co.com.ventas.ventas.venta.values.VentaId;
-
+/**
+ * evento Total De Factura Actualizado
+ *
+ * @author Camila Morales
+ * @version 1.0.0
+ * @since 1.0.0
+ */
 public class TotalDeFacturaActualizado extends DomainEvent {
     private final VentaId ventaId;
     private final FacturaId facturaId;
     private final Total total;
 
+    /**
+     * Constructor
+     * @param ventaId
+     * @param facturaId
+     * @param total
+     */
     public TotalDeFacturaActualizado(VentaId ventaId, FacturaId facturaId, Total total) {
         super("co.com.ventas.ventas.TotalDeFacturaActualizado");
         this.ventaId = ventaId;
@@ -17,6 +29,9 @@ public class TotalDeFacturaActualizado extends DomainEvent {
         this.total = total;
     }
 
+    /**
+     * Getters
+     */
     public VentaId getVentaId() {
         return ventaId;
     }

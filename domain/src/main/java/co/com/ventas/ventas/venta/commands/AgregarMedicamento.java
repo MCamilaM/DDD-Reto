@@ -3,7 +3,13 @@ package co.com.ventas.ventas.venta.commands;
 import co.com.sofka.domain.generic.Command;
 import co.com.ventas.ventas.venta.values.*;
 import generics.Nombre;
-
+/**
+ * Comando Agregar Medicamento
+ *
+ * @author Camila Morales
+ * @version 1.0.0
+ * @since 1.0.0
+ */
 public class AgregarMedicamento extends Command {
     private final VentaId ventaId;
     private final MedicamentoId medicamentoId;
@@ -13,6 +19,16 @@ public class AgregarMedicamento extends Command {
     private final Precio precio;
     private final Cantidad cantidad;
 
+    /**
+     * Constructor
+     * @param ventaId
+     * @param medicamentoId
+     * @param nombre
+     * @param laboratorio
+     * @param efectoFarmacologico
+     * @param precio
+     * @param cantidad
+     */
     public AgregarMedicamento(VentaId ventaId,
                               MedicamentoId medicamentoId,
                               Nombre nombre,
@@ -29,6 +45,9 @@ public class AgregarMedicamento extends Command {
         this.cantidad = cantidad;
     }
 
+    /**
+     * Getters
+     */
     public VentaId getVentaId() {
         return ventaId;
     }
